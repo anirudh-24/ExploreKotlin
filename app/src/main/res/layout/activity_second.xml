@@ -14,27 +14,27 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.anirudh.kotlin.MainActivity">
+        tools:context="ui.MainActivity">
 
         <Button
             android:id="@+id/btnToast"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Click Me To See A Toast" />
+            style="@style/buttonHome"
+            android:text="Click To See A Toast" />
 
         <Button
             android:id="@+id/btnSnackBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Click Me To See A SnackBar" />
+            style="@style/buttonHome"
+            android:text="Click To See A SnackBar" />
 
         <Button
             android:id="@+id/btnListView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Click Me To See A Simple ListView" />
+            android:text="Click To See A Simple ListView"
+            style="@style/buttonHome" />
+
+        <Button
+            android:id="@+id/btnRecyclerView"
+            android:text="Click To See Recycler View"
+            style="@style/buttonHome" />
 
     </LinearLayout>
 </ScrollView>
