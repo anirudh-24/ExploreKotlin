@@ -2,6 +2,7 @@ package model
 
 /**
  * Created by anirudh on 26/5/16.
+ * model for recycler view data
  */
 class DemoRecyclerModel {
 
