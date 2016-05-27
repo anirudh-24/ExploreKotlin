@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name="ui.SimpleListImplementationActivity" />
-        <activity android:name="ui.RecyclerViewActivity"></activity>
+        <activity android:name="ui.RecyclerViewActivity" />
+        <activity android:name="ui.RestApiSampleActivity"></activity>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             btnSnackBar -> Snackbar.make(btnSnackBar, "Hello SnackBar", Snackbar.LENGTH_LONG).show()
             btnListView -> startActivity(Intent(this, SimpleListImplementationActivity::class.java)) //implementation of intent to start a activity
             btnRecyclerView -> startActivity(Intent(this, RecyclerViewActivity::class.java))
+            btnRestApiExample -> startActivity(Intent(this, RestApiSampleActivity::class.java))
             else -> {
                 //this will execute if no condition is match just like default in switch
             }
@@ -40,5 +41,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnSnackBar.setOnClickListener(this)
         btnListView.setOnClickListener(this)
         btnRecyclerView.setOnClickListener(this)
+        btnRestApiExample.setOnClickListener(this)
     }
 }

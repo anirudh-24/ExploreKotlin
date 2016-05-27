@@ -28,13 +28,18 @@
 
         <Button
             android:id="@+id/btnListView"
-            android:text="Click To See A Simple ListView"
-            style="@style/buttonHome" />
+            style="@style/buttonHome"
+            android:text="Click To See A Simple ListView" />
 
         <Button
             android:id="@+id/btnRecyclerView"
-            android:text="Click To See Recycler View"
-            style="@style/buttonHome" />
+            style="@style/buttonHome"
+            android:text="Click To See Recycler View" />
+
+        <Button
+            android:id="@+id/btnRestApiExample"
+            style="@style/buttonHome"
+            android:text="Click To See RestApi Use" />
 
     </LinearLayout>
 </ScrollView>
