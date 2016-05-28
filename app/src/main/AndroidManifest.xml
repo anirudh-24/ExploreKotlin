@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="anirudh.com.explorekotlin">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +21,7 @@
         </activity>
         <activity android:name="ui.SimpleListImplementationActivity" />
         <activity android:name="ui.RecyclerViewActivity" />
-        <activity android:name="ui.RestApiSampleActivity"></activity>
+        <activity android:name="ui.RestApiSampleActivity"/>
     </application>
 
 </manifest>
