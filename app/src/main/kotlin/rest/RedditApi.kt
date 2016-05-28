@@ -11,7 +11,7 @@ import rx.Observable
  */
 interface RedditApi {
     @GET("/top.json")
-    fun getTop(@Query("after") after: String,
+    fun getTop(@Query("count") count: String,
                @Query("limit") limit: String)
             : Observable<RedditNewsResponse> ;
 }

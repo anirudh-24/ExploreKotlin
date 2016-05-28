@@ -2,6 +2,7 @@ package adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +24,7 @@ class RetrofitSampleAdapter(var mDataList: ArrayList<RedditChildrenResponse>, va
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder? {
-        return (ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_demo_recyclerview, parent, false)))
+        return (ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_rest_api_demo, parent, false)))
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
@@ -31,13 +32,23 @@ class RetrofitSampleAdapter(var mDataList: ArrayList<RedditChildrenResponse>, va
         val data: RedditNewsDataResponse = mDataList[position].data
         holder?.textTitle?.isSelected = true
         holder?.textTitle?.text = data.title
-        holder?.textSubTitle?.text = data.author
+        holder?.textAuthor?.text = String.format("%1s: %2s", "Author", data.author)
+        holder?.textTime?.text = String.format("%1s: %2s", "Created", getDate(data.created))
         Glide.with(mContext).load(data.thumbnail).error(R.mipmap.ic_launcher).into(holder?.imageView)
     }
 
     class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         var imageView = itemView?.findViewById(R.id.imageView) as ImageView
         var textTitle = itemView?.findViewById(R.id.txtTitle) as TextView
-        var textSubTitle = itemView?.findViewById(R.id.txtSubTitle) as TextView
+        var textAuthor = itemView?.findViewById(R.id.txtAuthor) as TextView
+        var textTime = itemView?.findViewById(R.id.txtTime) as TextView
+    }
+
+    //convert time in milliseconds to date
+    private fun getDate(time: Long): String {
+        val cal: Calendar = Calendar.getInstance(Locale.ENGLISH);
+        cal.timeInMillis = time;
+        val date: String = DateFormat.format("dd-MM-yyyy", cal).toString();
+        return date;
     }
 }

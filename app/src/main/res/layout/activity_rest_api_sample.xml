@@ -3,13 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#cccccc"
     tools:context="ui.RestApiSampleActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerRetrofitTest"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnLoadMore" />
+        android:layout_above="@+id/btnLoadMore">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerRetrofitTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <Button
         android:id="@+id/btnLoadMore"
@@ -18,5 +25,12 @@
         android:layout_alignParentBottom="true"
         android:text="Load More"
         tools:ignore="HardcodedText" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 </RelativeLayout>
